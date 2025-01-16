@@ -25,7 +25,10 @@ export default function Footer() {
         </div>
         <hr className="border-light" />
         <div className="py-4 text-sm text-light flex items-center justify-between">
-          <p>© 2025 Virts Creative</p>
+          <div>
+            <p>© 2025 Virts Creative</p>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+          </div>
           <div className="flex items-center justify-center gap-4">
             <Link href="https://x.com/asvirts" target="_blank">
               <i className="bi bi-twitter-x text-light text-2xl"></i>
