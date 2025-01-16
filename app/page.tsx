@@ -11,6 +11,16 @@ const instrumentSerif = Instrument_Serif({
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center py-16 gap-8">
+      <div className="flex items-center justify-center gap-4 bg-white border border-border rounded-full px-4 py-2">
+        <Image
+          src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZ0iN8cYWeli5WA4cU1kKJZaDVESHtuF3mr0BY"
+          alt="Reviewer"
+          className="rounded-full border border-yellow-500"
+          width={24}
+          height={24}
+        />
+        <p className="text-sm">“Andrew was so great to work with!”</p>
+      </div>
       <Image
         src="/virts-logo.svg"
         alt="Virts Creative Logo"
@@ -18,7 +28,7 @@ export default function Home() {
         height={36}
       />
       <h1
-        className={`text-6xl mx-auto max-w-5xl font-bold text-center ${instrumentSerif.className}`}
+        className={`text-4xl lg:text-6xl  mx-auto max-w-5xl font-bold text-center ${instrumentSerif.className}`}
       >
         I elevate startups and small-medium businesses through design and
         development
@@ -29,6 +39,15 @@ export default function Home() {
       >
         Book my 15-minute intro call
       </Link>
+      <div className="pt-16">
+        <Image
+          src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZwLHHZO9OdtSjfYIKaRLX3B9CEmFnhJgHNvMP"
+          alt="Talent Hub Mock Up"
+          className="max-w-full"
+          width={1440}
+          height={832}
+        />
+      </div>
     </div>
   )
 }

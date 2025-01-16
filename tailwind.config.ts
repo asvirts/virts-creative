@@ -24,7 +24,8 @@ export default {
           900: "#68511e"
         },
         dark: "#242424",
-        light: "#8E8E8E"
+        light: "#8E8E8E",
+        border: "#E9EAEC"
       },
       fontFamily: {
         helvetica: ["Helvetica", "sans-serif"],
