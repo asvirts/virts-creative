@@ -7,9 +7,9 @@ export default function Navbar() {
       <nav className="mx-auto flex justify-between items-center py-5">
         <Link href="/">Home</Link>
         <div className="flex items-center gap-6">
-          <Link href="/about">About</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/pages/about">About</Link>
+          <Link href="#">Blog</Link>
+          <Link href="/pages/contact">Contact</Link>
         </div>
       </nav>
     </div>
