@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container flex flex-col gap-8 mx-auto py-16">
         <div className="flex items-center justify-between">
           <div className="flex flex-col text-left items-start gap-2">
-            <h2 className="text-4xl font-bold text-dark">Contact</h2>
+            <h2 className="text-4xl text-dark">Contact</h2>
             <p className="text-light">andrew@virts.dev</p>
             <p className="text-light">Lafayette, LA, USA</p>
           </div>
