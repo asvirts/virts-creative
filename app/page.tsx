@@ -79,7 +79,7 @@ export default function Home() {
           development
         </h1>
         <Link
-          href="/contact"
+          href="https://calendly.com/andrewvirts/15-minute-intro-call"
           className="mt-8 mx-auto px-8 py-4 bg-yellow-500 text-text-dark rounded-full hover:opacity-90 transition-all"
         >
           Book my 15-minute intro call
