@@ -43,7 +43,7 @@ export default function Home() {
         <Image
           src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZwLHHZO9OdtSjfYIKaRLX3B9CEmFnhJgHNvMP"
           alt="Talent Hub Mock Up"
-          className="max-w-full"
+          className="w-full"
           width={1440}
           height={832}
         />
