@@ -35,8 +35,8 @@ export default function About() {
       </h1>
       <p className="text-lg text-center max-w-3xl text-light">
         Function follows form in every pixel and interaction. I craft digital
-        experiences that marry beauty with purpose, ensuring your users don't
-        just see the design—they feel it working for them.
+        experiences that marry beauty with purpose, ensuring your users
+        don&apos;t just see the design—they feel it working for them.
       </p>
     </div>
   )
