@@ -53,7 +53,7 @@ const projects = [
 export default function Home() {
   return (
     <div>
-      <section className="flex flex-col items-center justify-center py-16 gap-8">
+      <section className="flex flex-col items-center justify-center py-16 px-4 gap-8">
         <div className="flex items-center justify-center gap-4 bg-white border border-border rounded-full px-4 py-2">
           <Image
             src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZ0iN8cYWeli5WA4cU1kKJZaDVESHtuF3mr0BY"
@@ -96,7 +96,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <section className="py-32 gap-8">
+      <section className="py-32 gap-8 px-4">
         <div className="flex items-center gap-4 text-start">
           <h2 className="text-4xl text-dark">Featured work</h2>
           <div className="text-4xl text-light">

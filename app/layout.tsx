@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <Analytics />
-      <body className={`${helvetica.className} pt-5 px-4 lg:px-0`}>
+      <body className={`${helvetica.className}`}>
         <Navbar />
         <div className="container mx-auto">{children}</div>
         <Ankle />

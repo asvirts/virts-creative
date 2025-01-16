@@ -4,7 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 
 export default function Footer() {
   return (
-    <div className="w-full mx-auto bg-yellow-50">
+    <div className="w-full mx-auto bg-yellow-50 px-4">
       <div className="container flex flex-col gap-8 mx-auto py-16">
         <div className="flex items-center justify-between">
           <div className="flex flex-col text-left items-start gap-2">
