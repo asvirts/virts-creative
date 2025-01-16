@@ -35,18 +35,20 @@ export default function Home() {
       </h1>
       <Link
         href="/contact"
-        className="mt-8 mx-auto px-8 py-4 bg-yellow-500 text-text-dark rounded-full hover:opacity-90 transition-opacity"
+        className="mt-8 mx-auto px-8 py-4 bg-yellow-500 text-text-dark rounded-full hover:opacity-90 transition-all"
       >
         Book my 15-minute intro call
       </Link>
       <div className="pt-16">
-        <Image
-          src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZwLHHZO9OdtSjfYIKaRLX3B9CEmFnhJgHNvMP"
-          alt="Talent Hub Mock Up"
-          className="w-full"
-          width={1440}
-          height={832}
-        />
+        <Link href="https://x.com/asvirts" target="_blank">
+          <Image
+            src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZwLHHZO9OdtSjfYIKaRLX3B9CEmFnhJgHNvMP"
+            alt="Talent Hub Mock Up"
+            className="w-full"
+            width={1440}
+            height={832}
+          />
+        </Link>
       </div>
     </div>
   )

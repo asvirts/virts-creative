@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import "bootstrap-icons/font/bootstrap-icons.css"
 
 export default function Footer() {
   return (
@@ -23,8 +24,22 @@ export default function Footer() {
           </div>
         </div>
         <hr className="border-light" />
-        <div className="py-4 text-sm text-light">
+        <div className="py-4 text-sm text-light flex items-center justify-between">
           <p>© 2025 Virts Creative</p>
+          <div className="flex items-center justify-center gap-4">
+            <Link href="https://x.com/asvirts" target="_blank">
+              <i className="bi bi-twitter-x text-light text-2xl"></i>
+            </Link>
+            <Link href="https://www.github.com/asvirts/" target="_blank">
+              <i className="bi bi-github text-light text-2xl"></i>
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/andrewvirts/"
+              target="_blank"
+            >
+              <i className="bi bi-linkedin text-light text-2xl"></i>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
