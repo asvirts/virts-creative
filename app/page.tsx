@@ -97,7 +97,7 @@ export default function Home() {
         </div>
       </section>
       <section className="py-32 gap-8 px-4">
-        <div className="flex items-center gap-4 text-start">
+        <div className="flex flex-wrap items-center gap-4 text-start">
           <h2 className="text-4xl text-dark">Featured work</h2>
           <div className="text-4xl text-light">
             A selection of recent projects.
@@ -116,7 +116,7 @@ export default function Home() {
                     alt={`${project.name} Logo`}
                     width={445}
                     height={300}
-                    className="rounded object-cover w-full h-[300px]"
+                    className="rounded object-cover w-full h-[200px] lg:h-[300px] hover:opacity-90 transition-opacity"
                   />
                 </Link>
               ) : (
