@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="py-4 text-sm text-light flex items-center justify-between">
           <div>
             <p>© 2025 Virts Creative</p>
-            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/pages/privacy-policy">Privacy Policy</Link>
           </div>
           <div className="flex items-center justify-center gap-4">
             <Link href="https://x.com/asvirts" target="_blank">
