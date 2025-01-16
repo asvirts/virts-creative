@@ -10,7 +10,7 @@ const instrumentSerif = Instrument_Serif({
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center py-16 gap-8">
+    <div className="flex flex-col items-center justify-center py-16 px-4 gap-8">
       <div className="flex items-center justify-center gap-4 bg-white border border-border rounded-full px-4 py-2">
         <Image
           src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZ0iN8cYWeli5WA4cU1kKJZaDVESHtuF3mr0BY"
