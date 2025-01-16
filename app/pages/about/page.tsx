@@ -30,26 +30,14 @@ export default function About() {
       <h1
         className={`text-4xl lg:text-6xl  mx-auto max-w-5xl font-bold text-center ${instrumentSerif.className}`}
       >
-        I elevate startups and small-medium businesses through design and
-        development
+        Design is not just what it looks like and feels like. Design is how it
+        works.
       </h1>
-      <Link
-        href="/contact"
-        className="mt-8 mx-auto px-8 py-4 bg-yellow-500 text-text-dark rounded-full hover:opacity-90 transition-all"
-      >
-        Book my 15-minute intro call
-      </Link>
-      <div className="pt-16">
-        <Link href="https://x.com/asvirts" target="_blank">
-          <Image
-            src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZwLHHZO9OdtSjfYIKaRLX3B9CEmFnhJgHNvMP"
-            alt="Talent Hub Mock Up"
-            className="w-full"
-            width={1440}
-            height={832}
-          />
-        </Link>
-      </div>
+      <p className="text-lg text-center max-w-3xl text-light">
+        Function follows form in every pixel and interaction. I craft digital
+        experiences that marry beauty with purpose, ensuring your users don't
+        just see the design—they feel it working for them.
+      </p>
     </div>
   )
 }
