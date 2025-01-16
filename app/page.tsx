@@ -103,7 +103,7 @@ export default function Home() {
             A selection of recent projects.
           </div>
         </div>
-        <div className="flex flex-wrap items-center justify-between py-8 gap-x-4 gap-y-16">
+        <div className="flex flex-wrap items-center justify-between py-8 gap-x-4 gap-y-8">
           {projects.map((project, index) => (
             <div
               key={index}
