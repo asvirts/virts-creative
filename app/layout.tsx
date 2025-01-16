@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${helvetica.className} container mx-auto py-5 px-2 lg:px-0`}
+        className={`${helvetica.className} container mx-auto py-5 px-4 lg:px-0`}
       >
         <Navbar />
         {children}
