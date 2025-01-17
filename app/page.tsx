@@ -76,6 +76,8 @@ export default function Home() {
             width={24}
             height={24}
             priority
+            quality={75}
+            loading="eager"
           />
           <p className="text-sm text-dark dark:text-white">
             &quot;Andrew was so great to work with!&quot;
@@ -109,6 +111,8 @@ export default function Home() {
               className="w-full"
               width={1440}
               height={832}
+              loading="lazy"
+              quality={75}
             />
           </Link>
         </div>
@@ -134,6 +138,8 @@ export default function Home() {
                     width={445}
                     height={300}
                     className="rounded object-cover w-full h-[200px] lg:h-[300px] hover:opacity-90 transition-opacity"
+                    loading="lazy"
+                    quality={75}
                   />
                 </Link>
               ) : (
