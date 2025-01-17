@@ -68,7 +68,7 @@ export default function Home() {
   return (
     <div>
       <section className="flex flex-col items-center justify-center py-16 px-4 gap-8">
-        <div className="flex items-center justify-center gap-4 bg-white border border-border rounded-full px-4 py-2">
+        <div className="flex items-center justify-center gap-4 bg-white dark:bg-gray-950 border border-border dark:border-gray-700 rounded-full px-4 py-2">
           <Image
             src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZ0iN8cYWeli5WA4cU1kKJZaDVESHtuF3mr0BY"
             alt="Reviewer"
@@ -77,7 +77,7 @@ export default function Home() {
             height={24}
             priority
           />
-          <p className="text-sm">
+          <p className="text-sm text-dark dark:text-white">
             &quot;Andrew was so great to work with!&quot;
           </p>
         </div>
@@ -97,7 +97,7 @@ export default function Home() {
         <Link
           href="https://calendly.com/andrewvirts/15-minute-intro-call"
           target="_blank"
-          className="mt-8 mx-auto px-8 py-4 bg-yellow-500 text-text-dark rounded-full hover:opacity-90 transition-all"
+          className="mt-8 mx-auto px-8 py-4 bg-yellow-500 dark:bg-yellow-600 text-text-dark rounded-full hover:opacity-90 transition-all"
         >
           Book my 15-minute intro call
         </Link>
@@ -115,7 +115,7 @@ export default function Home() {
       </section>
       <section className="py-32 gap-8 px-4">
         <div className="flex flex-wrap items-center gap-4 text-start">
-          <h2 className="text-4xl text-dark">Featured work</h2>
+          <h2 className="text-4xl text-dark dark:text-white">Featured work</h2>
           <div className="text-4xl text-light">
             A selection of recent projects.
           </div>
@@ -124,7 +124,7 @@ export default function Home() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.33%-1rem)] flex flex-col p-3 bg-white border border-border rounded gap-4"
+              className="w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.33%-1rem)] flex flex-col p-3 bg-white dark:bg-gray-800  rounded gap-4"
             >
               {project.link ? (
                 <Link href={project.link} target="_blank">
@@ -145,14 +145,16 @@ export default function Home() {
                   className="rounded object-cover w-full h-[300px]"
                 />
               )}
-              <h3 className="text-dark text-2xl">{project.name}</h3>
+              <h3 className="text-dark dark:text-white text-2xl">
+                {project.name}
+              </h3>
               <div className="flex items-center justify-start gap-2">
                 {project.tags.map((tag, index) => (
                   <div
                     key={index}
-                    className="px-2 py-1 bg-yellow-500 rounded-full"
+                    className="px-2 py-1 bg-yellow-500 dark:bg-gray-600 rounded-full"
                   >
-                    <p className="text-xs text-dark">{tag}</p>
+                    <p className="text-xs text-dark dark:text-white">{tag}</p>
                   </div>
                 ))}
               </div>
