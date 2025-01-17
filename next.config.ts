@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
         hostname: "67wvo3jvf7.ufs.sh",
         port: "",
         pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        port: "",
+        pathname: "/**"
       }
     ]
   }

@@ -8,7 +8,7 @@ export default function Navbar() {
         <Link href="/">Home</Link>
         <div className="flex items-center gap-6">
           <Link href="/pages/about">About</Link>
-          <Link href="#">Blog</Link>
+          <Link href="https://medium.com/@asvirts">Blog</Link>
           <Link href="/pages/contact">Contact</Link>
         </div>
       </nav>
