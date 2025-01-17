@@ -5,7 +5,9 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   display: "swap",
   weight: "400",
-  preload: true
+  preload: true,
+  fallback: ["system-ui", "arial"],
+  adjustFontFallback: true
 })
 
 const projects = [
@@ -50,6 +52,18 @@ const projects = [
   }
 ]
 
+export const metadata = {
+  title: "Virts Creative - Design & Development",
+  description:
+    "Elevating startups and small-medium businesses through design and development",
+  openGraph: {
+    title: "Virts Creative - Design & Development",
+    description:
+      "Elevating startups and small-medium businesses through design and development",
+    type: "website"
+  }
+}
+
 export default function Home() {
   return (
     <div>
@@ -61,6 +75,7 @@ export default function Home() {
             className="rounded-full border border-yellow-500"
             width={24}
             height={24}
+            priority
           />
           <p className="text-sm">
             &quot;Andrew was so great to work with!&quot;
@@ -71,6 +86,7 @@ export default function Home() {
           alt="Virts Creative Logo"
           width={36}
           height={36}
+          priority
         />
         <h1
           className={`text-4xl lg:text-6xl  mx-auto max-w-5xl font-bold text-center ${instrumentSerif.className}`}
