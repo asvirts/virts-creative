@@ -33,20 +33,28 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link
-          rel="preconnect"
-          href="https://67wvo3jvf7.ufs.sh"
-          crossOrigin="anonymous"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <link
+              rel="preconnect"
+              href="https://67wvo3jvf7.ufs.sh"
+              crossOrigin="anonymous"
+            />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossOrigin="anonymous"
+            />
+          </>
+        )}
       </head>
-      <Analytics />
-      <SpeedInsights />
+      {process.env.NODE_ENV === "production" && (
+        <>
+          <Analytics />
+          <SpeedInsights />
+        </>
+      )}
       <body className={`${helvetica.className}`}>
         <Navbar />
         <div className="container mx-auto">{children}</div>
