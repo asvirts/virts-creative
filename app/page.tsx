@@ -61,7 +61,16 @@ export async function generateMetadata() {
       title: "Virts Creative - Web Design & Development",
       description:
         "Elevating startups and small-medium businesses through design and development",
-      type: "website"
+      type: "website",
+      url: "https://www.virtscreative.com",
+      images: [
+        {
+          url: "https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZ1rOEgRti9d86EqgU4mahPb2BwIWVcFjsvJL3",
+          width: 1500,
+          height: 500,
+          alt: "Virts Creative Logo"
+        }
+      ]
     }
   }
 }
