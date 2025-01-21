@@ -7,6 +7,29 @@ const instrumentSerif = Instrument_Serif({
   preload: true
 })
 
+export async function generateMetadata() {
+  return {
+    title: "About Virts Creative - Web Design & Development",
+    description:
+      "Empowering businesses to thrive with innovative web solutions and creative design",
+    openGraph: {
+      title: "Virts Creative - Web Design & Development",
+      description:
+        "Empowering businesses to thrive with innovative web solutions and creative design",
+      type: "website",
+      url: "https://www.virtscreative.com",
+      images: [
+        {
+          url: "https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZ1rOEgRti9d86EqgU4mahPb2BwIWVcFjsvJL3",
+          width: 1500,
+          height: 500,
+          alt: "Virts Creative Logo"
+        }
+      ]
+    }
+  }
+}
+
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center py-16 px-4 gap-8">
