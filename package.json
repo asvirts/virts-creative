@@ -21,6 +21,7 @@
     "groq": "^3.70.0",
     "next": "15.1.4",
     "next-sanity": "^9.8.37",
+    "next-seo": "^6.6.0",
     "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

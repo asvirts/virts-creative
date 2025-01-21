@@ -52,15 +52,17 @@ const projects = [
   }
 ]
 
-export const metadata = {
-  title: "Virts Creative - Design & Development",
-  description:
-    "Elevating startups and small-medium businesses through design and development",
-  openGraph: {
-    title: "Virts Creative - Design & Development",
+export async function generateMetadata() {
+  return {
+    title: "Virts Creative - Web Design & Development",
     description:
       "Elevating startups and small-medium businesses through design and development",
-    type: "website"
+    openGraph: {
+      title: "Virts Creative - Web Design & Development",
+      description:
+        "Elevating startups and small-medium businesses through design and development",
+      type: "website"
+    }
   }
 }
 
