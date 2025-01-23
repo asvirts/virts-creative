@@ -12,6 +12,12 @@ const instrumentSerif = Instrument_Serif({
 
 const projects = [
   {
+    name: "Covenant Child Development Center",
+    tags: ["Branding", "Design", "Development", "CMS"],
+    image:
+      "https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZXMLbPO2urfNOqtnyMZPiYc10xoeR5Hb43QmB"
+  },
+  {
     name: "MyJAM",
     tags: ["Design", "Development"],
     image:
@@ -43,12 +49,6 @@ const projects = [
     tags: ["Design", "Development"],
     image:
       "https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZDpFBkq5WIf87VUzRhOSMyDmCalN3ngeHqkcx"
-  },
-  {
-    name: "Mobile UI",
-    tags: ["Design"],
-    image:
-      "https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZnHSDELOOVi2zGRmAB53QcawC4MZgSY1I9uHD"
   }
 ]
 
