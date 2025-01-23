@@ -44,7 +44,7 @@ export default function About() {
         <p className="text-sm">“Andrew was so great to work with!”</p>
       </div>
       <Image
-        src="/virts-logo.svg"
+        src="/virts-logo.svg" 
         alt="Virts Creative Logo"
         width={36}
         height={36}
