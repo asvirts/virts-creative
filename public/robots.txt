@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.virtscreative.com
-
-# Sitemaps
-Sitemap: https://www.virtscreative.com/sitemap.xml
