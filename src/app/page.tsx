@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowRight, CheckCircle, Code, Layout, Palette } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -57,13 +56,12 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center justify-center">
-              <Image
+              <img
                 src="/placeholder.svg?height=550&width=550"
                 width={550}
                 height={550}
                 alt="Hero image showing web design process"
                 className="rounded-lg object-cover"
-                priority
               />
             </div>
           </div>
@@ -159,7 +157,7 @@ export default function Home() {
                 className="group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl"
               >
                 <Link href={`/portfolio/project-${item}`}>
-                  <Image
+                  <img
                     src={`/placeholder.svg?height=400&width=600&text=Project+${item}`}
                     alt={`Project ${item} thumbnail`}
                     width={600}
@@ -357,7 +355,7 @@ export default function Home() {
             {[1, 2, 3].map((item) => (
               <Link key={item} href={`/blog/post-${item}`} className="group">
                 <div className="space-y-3">
-                  <Image
+                  <img
                     src={`/placeholder.svg?height=200&width=400&text=Blog+${item}`}
                     alt={`Blog post ${item} thumbnail`}
                     width={400}

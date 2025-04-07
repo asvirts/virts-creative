@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
@@ -14,7 +13,8 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }): Promise<Metadata> {
-  const project = await getProjectBySlug(params.slug)
+  const slug = params.slug
+  const project = await getProjectBySlug(slug)
 
   const title = project.fields.seoMetadata?.fields.title || project.fields.title
   const description =
@@ -90,7 +90,7 @@ export default async function ProjectPage({
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex justify-center">
             <div className="relative w-full max-w-5xl">
-              <Image
+              <img
                 src={`https:${project.fields.featuredImage.fields.file.url}`}
                 alt={
                   project.fields.featuredImage.fields.title ||
@@ -190,7 +190,7 @@ export default async function ProjectPage({
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {project.fields.projectImages.map((image, index) => (
                   <div key={index} className="overflow-hidden rounded-lg">
-                    <Image
+                    <img
                       src={`https:${image.fields.file.url}`}
                       alt={
                         image.fields.title ||

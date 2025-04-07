@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CheckCircle } from "lucide-react"
@@ -81,7 +80,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Image
+              <img
                 src="/placeholder.svg?height=600&width=600&text=Our+Story"
                 alt="Virts Creative team working together"
                 width={600}
@@ -171,7 +170,7 @@ export default function AboutPage() {
                 key={index}
                 className="flex flex-col items-center space-y-4 text-center"
               >
-                <Image
+                <img
                   src={member.image || "/placeholder.svg"}
                   alt={member.name}
                   width={200}

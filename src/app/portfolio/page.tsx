@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import {
   getAllProjects,
   getAllProjectCategories,
@@ -56,7 +55,7 @@ export default async function PortfolioPage() {
                   className="group"
                 >
                   <div className="overflow-hidden rounded-lg">
-                    <Image
+                    <img
                       src={`https:${project.fields.featuredImage.fields.file.url}`}
                       alt={
                         project.fields.featuredImage.fields.title ||

@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import {
   ArrowRight,
   CheckCircle,
@@ -211,7 +210,7 @@ export default function ServicesPage() {
                   </ul>
                 </div>
                 <div className="flex items-center justify-center">
-                  <Image
+                  <img
                     src={`/placeholder.svg?height=400&width=600&text=${service.title}`}
                     alt={`${service.title} service illustration`}
                     width={600}

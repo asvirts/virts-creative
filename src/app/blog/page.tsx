@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { getAllPosts, getAllCategories, BlogPost } from "@/lib/contentful"
 import { Metadata } from "next"
