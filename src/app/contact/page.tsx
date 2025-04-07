@@ -7,8 +7,16 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone } from "lucide-react"
 
+interface FormData {
+  name: string
+  email: string
+  phone: string
+  company: string
+  message: string
+}
+
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
@@ -18,28 +26,48 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: ""
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
       })
-    }, 1500)
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: ""
+        })
+      } else {
+        setError(data.message || "Something went wrong. Please try again.")
+      }
+    } catch (err) {
+      setError("Failed to submit the form. Please try again later.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -143,6 +171,13 @@ export default function ContactPage() {
                       required
                     />
                   </div>
+
+                  {error && (
+                    <div className="rounded-lg bg-red-50 p-4 text-red-700">
+                      <p>{error}</p>
+                    </div>
+                  )}
+
                   <Button
                     type="submit"
                     className="w-full bg-black text-white hover:bg-gray-800"
@@ -198,7 +233,7 @@ export default function ContactPage() {
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
-                  allowFullScreen=""
+                  allowFullScreen={true}
                   loading="lazy"
                 ></iframe>
               </div>
