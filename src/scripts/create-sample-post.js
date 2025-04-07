@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+// Load environment variables from .env.local
+require("dotenv").config({ path: ".env.local" })
+
 const { createClient } = require("contentful-management")
 
 // Initialize the Contentful Management client

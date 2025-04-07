@@ -118,3 +118,116 @@ export async function getAllCategories(
   const categories = response.items.map((item: any) => item.fields.category)
   return ["All", ...Array.from(new Set(categories))]
 }
+
+// Type definitions for portfolio projects
+export type PortfolioProject = {
+  sys: {
+    id: string
+  }
+  fields: {
+    title: string
+    slug: string
+    category: string
+    description: string
+    detailedDescription: string
+    featuredImage: {
+      fields: {
+        file: {
+          url: string
+        }
+        title: string
+      }
+    }
+    projectImages?: {
+      fields: {
+        file: {
+          url: string
+        }
+        title: string
+      }
+    }[]
+    technologies?: string[]
+    client?: string
+    projectDate: string
+    projectUrl?: string
+    featured: boolean
+    seoMetadata?: {
+      fields: {
+        title: string
+        description: string
+        keywords: string[]
+      }
+    }
+  }
+}
+
+// Get all portfolio projects
+export async function getAllProjects(
+  preview: boolean = false
+): Promise<PortfolioProject[]> {
+  const response = await getClient(preview).getEntries({
+    content_type: "portfolioProject",
+    order: "-fields.projectDate"
+  })
+
+  return response.items as unknown as PortfolioProject[]
+}
+
+// Get featured portfolio projects
+export async function getFeaturedProjects(
+  preview: boolean = false
+): Promise<PortfolioProject[]> {
+  const response = await getClient(preview).getEntries({
+    content_type: "portfolioProject",
+    "fields.featured": true,
+    order: "-fields.projectDate"
+  })
+
+  return response.items as unknown as PortfolioProject[]
+}
+
+// Get a single portfolio project by slug
+export async function getProjectBySlug(
+  slug: string,
+  preview: boolean = false
+): Promise<PortfolioProject> {
+  const response = await getClient(preview).getEntries({
+    content_type: "portfolioProject",
+    "fields.slug": slug,
+    limit: 1
+  })
+
+  if (!response.items.length) {
+    throw new Error(`Project with slug "${slug}" not found`)
+  }
+
+  return response.items[0] as unknown as PortfolioProject
+}
+
+// Get projects by category
+export async function getProjectsByCategory(
+  category: string,
+  preview: boolean = false
+): Promise<PortfolioProject[]> {
+  const response = await getClient(preview).getEntries({
+    content_type: "portfolioProject",
+    "fields.category": category,
+    order: "-fields.projectDate"
+  })
+
+  return response.items as unknown as PortfolioProject[]
+}
+
+// Get all project categories
+export async function getAllProjectCategories(
+  preview: boolean = false
+): Promise<string[]> {
+  const response = await getClient(preview).getEntries({
+    content_type: "portfolioProject",
+    select: "fields.category"
+  })
+
+  // Extract unique categories
+  const categories = response.items.map((item: any) => item.fields.category)
+  return ["All", ...Array.from(new Set(categories))]
+}

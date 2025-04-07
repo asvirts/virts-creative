@@ -1,5 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
+import {
+  getAllProjects,
+  getAllProjectCategories,
+  PortfolioProject
+} from "@/lib/contentful"
 
 export const metadata = {
   title: "Portfolio | Our Web Design & Development Work",
@@ -9,57 +14,10 @@ export const metadata = {
     "web design portfolio, web development projects, case studies, client work"
 }
 
-export default function PortfolioPage() {
-  const projects = [
-    {
-      id: 1,
-      title: "Eco Solutions Rebrand",
-      category: "Branding & Web Design",
-      description:
-        "A complete rebrand and website redesign for an eco-friendly products company.",
-      image: "/placeholder.svg?height=600&width=800&text=Eco+Solutions"
-    },
-    {
-      id: 2,
-      title: "TechStart Dashboard",
-      category: "Web Application",
-      description:
-        "A custom dashboard for a tech startup to manage their customer data and analytics.",
-      image: "/placeholder.svg?height=600&width=800&text=TechStart"
-    },
-    {
-      id: 3,
-      title: "Culinary Delights",
-      category: "E-commerce",
-      description:
-        "An e-commerce platform for a gourmet food delivery service with online ordering.",
-      image: "/placeholder.svg?height=600&width=800&text=Culinary+Delights"
-    },
-    {
-      id: 4,
-      title: "Fitness First",
-      category: "Web Design & Development",
-      description:
-        "A responsive website for a fitness center with class scheduling and member portal.",
-      image: "/placeholder.svg?height=600&width=800&text=Fitness+First"
-    },
-    {
-      id: 5,
-      title: "Urban Photography",
-      category: "Portfolio Website",
-      description:
-        "A portfolio website for a professional photographer showcasing their work.",
-      image: "/placeholder.svg?height=600&width=800&text=Urban+Photography"
-    },
-    {
-      id: 6,
-      title: "Legal Advisors",
-      category: "Corporate Website",
-      description:
-        "A professional website for a law firm with service information and contact forms.",
-      image: "/placeholder.svg?height=600&width=800&text=Legal+Advisors"
-    }
-  ]
+export default async function PortfolioPage() {
+  // Fetch projects and categories from Contentful
+  const projects = await getAllProjects()
+  const categories = await getAllProjectCategories()
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -83,34 +41,47 @@ export default function PortfolioPage() {
       {/* Portfolio Grid */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <Link
-                key={project.id}
-                href={`/portfolio/project-${project.id}`}
-                className="group"
-              >
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    width={800}
-                    height={600}
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="mt-4 space-y-2">
-                  <div className="text-sm font-medium text-gray-500">
-                    {project.category}
+          {projects.length === 0 ? (
+            <div className="text-center py-12">
+              <h2 className="text-xl font-medium text-gray-500">
+                No projects found. Check back soon!
+              </h2>
+            </div>
+          ) : (
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {projects.map((project) => (
+                <Link
+                  key={project.sys.id}
+                  href={`/portfolio/${project.fields.slug}`}
+                  className="group"
+                >
+                  <div className="overflow-hidden rounded-lg">
+                    <Image
+                      src={`https:${project.fields.featuredImage.fields.file.url}`}
+                      alt={
+                        project.fields.featuredImage.fields.title ||
+                        project.fields.title
+                      }
+                      width={800}
+                      height={600}
+                      className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
-                  <h3 className="text-xl font-bold group-hover:underline">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-500">{project.description}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+                  <div className="mt-4 space-y-2">
+                    <div className="text-sm font-medium text-gray-500">
+                      {project.fields.category}
+                    </div>
+                    <h3 className="text-xl font-bold group-hover:underline">
+                      {project.fields.title}
+                    </h3>
+                    <p className="text-gray-500">
+                      {project.fields.description}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
