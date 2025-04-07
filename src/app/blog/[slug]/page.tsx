@@ -7,12 +7,17 @@ import ReactMarkdown from "react-markdown"
 import BlogSchema from "@/components/blog-schema"
 import { draftMode } from "next/headers"
 
+type PageProps = {
+  params: {
+    slug: string
+  }
+  searchParams: Record<string, string | string[] | undefined>
+}
+
 // Generate metadata for the page
 export async function generateMetadata({
   params
-}: {
-  params: { slug: string }
-}): Promise<Metadata> {
+}: PageProps): Promise<Metadata> {
   const { isEnabled: isPreviewMode } = await draftMode()
 
   try {
@@ -62,11 +67,7 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function BlogPostPage({
-  params
-}: {
-  params: { slug: string }
-}) {
+export default async function BlogPostPage({ params }: PageProps) {
   // Check if preview mode is enabled
   const { isEnabled: isPreviewMode } = await draftMode()
 

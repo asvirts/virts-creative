@@ -28,7 +28,7 @@ interface SheetProps {
   onOpenChange?: (open: boolean) => void
 }
 
-export function Sheet({ children, open, onOpenChange }: SheetProps) {
+function Sheet({ children, open, onOpenChange }: SheetProps) {
   const [internalOpen, setInternalOpen] = useState(false)
 
   const isControlled = open !== undefined
@@ -59,7 +59,7 @@ interface SheetTriggerProps {
   className?: string
 }
 
-export function SheetTrigger({
+function SheetTrigger({
   children,
   asChild = false,
   className
@@ -95,7 +95,7 @@ interface SheetContentProps {
   side?: "top" | "right" | "bottom" | "left"
 }
 
-export function SheetContent({
+function SheetContent({
   children,
   className,
   side = "right"
