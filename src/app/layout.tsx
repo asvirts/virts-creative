@@ -64,9 +64,9 @@ export default function RootLayout({
           enableSystem={true}
           disableTransitionOnChange
         >
-          <div className="container mx-auto relative flex min-h-screen flex-col items-center justify-center">
+          <div className="items-center justify-center">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 w-full">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

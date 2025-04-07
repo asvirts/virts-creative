@@ -107,7 +107,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div className="absolute inset-0 bg-black bg-opacity-40" />
           </div>
 
-          <div className="container relative z-10 h-full flex flex-col justify-end pb-12 px-4 md:px-6">
+          <div className="container mx-auto relative z-10 h-full flex flex-col justify-end pb-12 px-4 md:px-6">
             <div className="max-w-3xl text-white">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
@@ -149,7 +149,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </section>
 
         {/* Article Content */}
-        <article className="container max-w-3xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+        <article className="container mx-auto max-w-3xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
           <div className="prose lg:prose-lg prose-headings:font-bold prose-h2:text-2xl prose-h3:text-xl prose-img:rounded-lg prose-img:mx-auto max-w-none">
             <ReactMarkdown>{fields.content}</ReactMarkdown>
           </div>
@@ -181,7 +181,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Newsletter */}
         <section className="w-full py-12 md:py-24 bg-gray-50">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">

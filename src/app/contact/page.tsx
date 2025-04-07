@@ -13,7 +13,7 @@ export default function ContactPage() {
     email: "",
     phone: "",
     company: "",
-    message: "",
+    message: ""
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -37,7 +37,7 @@ export default function ContactPage() {
         email: "",
         phone: "",
         company: "",
-        message: "",
+        message: ""
       })
     }, 1500)
   }
@@ -46,12 +46,15 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-100">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Contact Us</h1>
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Contact Us
+              </h1>
               <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Have a project in mind? Get in touch with our team to see how we can help.
+                Have a project in mind? Get in touch with our team to see how we
+                can help.
               </p>
             </div>
           </div>
@@ -60,19 +63,23 @@ export default function ContactPage() {
 
       {/* Contact Form & Info */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-bold">Get in Touch</h2>
                 <p className="mt-2 text-gray-500">
-                  Fill out the form below and we'll get back to you as soon as possible.
+                  Fill out the form below and we'll get back to you as soon as
+                  possible.
                 </p>
               </div>
               {isSubmitted ? (
                 <div className="rounded-lg bg-green-50 p-6 text-green-700">
                   <h3 className="text-xl font-bold">Thank You!</h3>
-                  <p className="mt-2">Your message has been received. We'll get back to you shortly.</p>
+                  <p className="mt-2">
+                    Your message has been received. We'll get back to you
+                    shortly.
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -149,7 +156,9 @@ export default function ContactPage() {
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-bold">Contact Information</h2>
-                <p className="mt-2 text-gray-500">Reach out to us directly using the information below.</p>
+                <p className="mt-2 text-gray-500">
+                  Reach out to us directly using the information below.
+                </p>
               </div>
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
@@ -206,10 +215,12 @@ export default function ContactPage() {
 
       {/* FAQ Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Frequently Asked Questions</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Frequently Asked Questions
+              </h2>
               <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Find answers to common questions about our services and process.
               </p>
@@ -220,33 +231,33 @@ export default function ContactPage() {
               {
                 question: "What is your typical project timeline?",
                 answer:
-                  "Project timelines vary depending on scope and complexity. A typical website project takes 6-8 weeks from kickoff to launch, while larger projects may take 3-4 months.",
+                  "Project timelines vary depending on scope and complexity. A typical website project takes 6-8 weeks from kickoff to launch, while larger projects may take 3-4 months."
               },
               {
                 question: "Do you offer website maintenance services?",
                 answer:
-                  "Yes, we offer ongoing maintenance packages to keep your website secure, up-to-date, and performing optimally. Our maintenance plans include regular updates, security monitoring, and technical support.",
+                  "Yes, we offer ongoing maintenance packages to keep your website secure, up-to-date, and performing optimally. Our maintenance plans include regular updates, security monitoring, and technical support."
               },
               {
                 question: "How much does a website cost?",
                 answer:
-                  "Website costs vary based on your specific requirements. We provide custom quotes after understanding your needs. Our projects typically range from $5,000 for basic websites to $25,000+ for complex web applications.",
+                  "Website costs vary based on your specific requirements. We provide custom quotes after understanding your needs. Our projects typically range from $5,000 for basic websites to $25,000+ for complex web applications."
               },
               {
                 question: "Do you help with content creation?",
                 answer:
-                  "Yes, we offer content creation services including copywriting, photography, and video production to help you present your brand effectively. We can work with your existing content or create new content from scratch.",
+                  "Yes, we offer content creation services including copywriting, photography, and video production to help you present your brand effectively. We can work with your existing content or create new content from scratch."
               },
               {
                 question: "Will my website be mobile-friendly?",
                 answer:
-                  "Absolutely. All our websites are built with responsive design, ensuring they look and function perfectly on all devices, from desktop computers to smartphones and tablets.",
+                  "Absolutely. All our websites are built with responsive design, ensuring they look and function perfectly on all devices, from desktop computers to smartphones and tablets."
               },
               {
                 question: "Do you provide SEO services?",
                 answer:
-                  "Yes, we implement on-page SEO best practices in all our website projects. We also offer comprehensive SEO services including keyword research, content optimization, and ongoing SEO strategy.",
-              },
+                  "Yes, we implement on-page SEO best practices in all our website projects. We also offer comprehensive SEO services including keyword research, content optimization, and ongoing SEO strategy."
+              }
             ].map((faq, index) => (
               <div key={index} className="space-y-2">
                 <h3 className="text-xl font-bold">{faq.question}</h3>
@@ -259,4 +270,3 @@ export default function ContactPage() {
     </div>
   )
 }
-

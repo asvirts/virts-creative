@@ -5,8 +5,10 @@ import { CheckCircle } from "lucide-react"
 
 export const metadata = {
   title: "About Us | Virts Creative Web Design Agency",
-  description: "Learn about Virts Creative, our team, our mission, and our approach to web design and development.",
-  keywords: "about Virts Creative, web design agency, design team, company mission, agency values",
+  description:
+    "Learn about Virts Creative, our team, our mission, and our approach to web design and development.",
+  keywords:
+    "about Virts Creative, web design agency, design team, company mission, agency values"
 }
 
 export default function AboutPage() {
@@ -15,39 +17,41 @@ export default function AboutPage() {
       name: "Alex Johnson",
       role: "Founder & Creative Director",
       bio: "With over 15 years of experience in design and development, Alex founded Virts Creative with a vision to help businesses succeed online.",
-      image: "/placeholder.svg?height=400&width=400&text=Alex",
+      image: "/placeholder.svg?height=400&width=400&text=Alex"
     },
     {
       name: "Sarah Chen",
       role: "Lead Designer",
       bio: "Sarah brings a unique perspective to every project, combining artistic vision with user-centered design principles.",
-      image: "/placeholder.svg?height=400&width=400&text=Sarah",
+      image: "/placeholder.svg?height=400&width=400&text=Sarah"
     },
     {
       name: "Michael Rodriguez",
       role: "Senior Developer",
       bio: "Michael is passionate about creating clean, efficient code that brings designs to life with seamless functionality.",
-      image: "/placeholder.svg?height=400&width=400&text=Michael",
+      image: "/placeholder.svg?height=400&width=400&text=Michael"
     },
     {
       name: "Emily Kim",
       role: "Project Manager",
       bio: "Emily ensures that every project runs smoothly, keeping communication clear and deliverables on schedule.",
-      image: "/placeholder.svg?height=400&width=400&text=Emily",
-    },
+      image: "/placeholder.svg?height=400&width=400&text=Emily"
+    }
   ]
 
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-100">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">About Virts Creative</h1>
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                About Virts Creative
+              </h1>
               <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We're a team of passionate designers and developers dedicated to creating exceptional digital
-                experiences.
+                We're a team of passionate designers and developers dedicated to
+                creating exceptional digital experiences.
               </p>
             </div>
           </div>
@@ -56,21 +60,24 @@ export default function AboutPage() {
 
       {/* Our Story */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter">Our Story</h2>
               <p className="text-gray-500 md:text-xl/relaxed">
-                Founded in 2015, Virts Creative began with a simple mission: to help businesses succeed online through
-                thoughtful design and powerful technology.
+                Founded in 2015, Virts Creative began with a simple mission: to
+                help businesses succeed online through thoughtful design and
+                powerful technology.
               </p>
               <p className="text-gray-500 md:text-xl/relaxed">
-                What started as a small team of passionate designers and developers has grown into a full-service
-                digital agency, serving clients across industries and around the world.
+                What started as a small team of passionate designers and
+                developers has grown into a full-service digital agency, serving
+                clients across industries and around the world.
               </p>
               <p className="text-gray-500 md:text-xl/relaxed">
-                Today, we continue to be driven by our commitment to excellence, innovation, and delivering results that
-                exceed our clients' expectations.
+                Today, we continue to be driven by our commitment to excellence,
+                innovation, and delivering results that exceed our clients'
+                expectations.
               </p>
             </div>
             <div className="flex justify-center">
@@ -88,10 +95,12 @@ export default function AboutPage() {
 
       {/* Our Values */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Values</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Our Values
+              </h2>
               <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 The principles that guide our work and relationships.
               </p>
@@ -102,30 +111,33 @@ export default function AboutPage() {
               {
                 title: "Excellence",
                 description:
-                  "We strive for excellence in everything we do, from design and development to client communication.",
+                  "We strive for excellence in everything we do, from design and development to client communication."
               },
               {
                 title: "Innovation",
                 description:
-                  "We embrace new technologies and approaches to deliver cutting-edge solutions for our clients.",
+                  "We embrace new technologies and approaches to deliver cutting-edge solutions for our clients."
               },
               {
                 title: "Collaboration",
-                description: "We believe in the power of collaboration, both within our team and with our clients.",
+                description:
+                  "We believe in the power of collaboration, both within our team and with our clients."
               },
               {
                 title: "Integrity",
-                description: "We operate with honesty, transparency, and a commitment to doing what's right.",
+                description:
+                  "We operate with honesty, transparency, and a commitment to doing what's right."
               },
               {
                 title: "Results",
                 description:
-                  "We focus on delivering measurable results that help our clients achieve their business goals.",
+                  "We focus on delivering measurable results that help our clients achieve their business goals."
               },
               {
                 title: "Growth",
-                description: "We're committed to continuous learning and growth, both as individuals and as a company.",
-              },
+                description:
+                  "We're committed to continuous learning and growth, both as individuals and as a company."
+              }
             ].map((value, index) => (
               <div key={index} className="flex flex-col space-y-2">
                 <div className="flex items-center space-x-2">
@@ -141,18 +153,24 @@ export default function AboutPage() {
 
       {/* Our Team */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Meet Our Team</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Meet Our Team
+              </h2>
               <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                The talented individuals who bring creativity and expertise to every project.
+                The talented individuals who bring creativity and expertise to
+                every project.
               </p>
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
             {team.map((member, index) => (
-              <div key={index} className="flex flex-col items-center space-y-4 text-center">
+              <div
+                key={index}
+                className="flex flex-col items-center space-y-4 text-center"
+              >
                 <Image
                   src={member.image || "/placeholder.svg"}
                   alt={member.name}
@@ -173,10 +191,12 @@ export default function AboutPage() {
 
       {/* Our Process */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Process</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Our Process
+              </h2>
               <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 How we work with clients to deliver exceptional results.
               </p>
@@ -188,27 +208,31 @@ export default function AboutPage() {
                 step: "01",
                 title: "Discovery",
                 description:
-                  "We start by understanding your business, goals, and target audience to create a tailored strategy.",
+                  "We start by understanding your business, goals, and target audience to create a tailored strategy."
               },
               {
                 step: "02",
                 title: "Planning",
                 description:
-                  "We develop a detailed project plan including sitemap, wireframes, and technical specifications.",
+                  "We develop a detailed project plan including sitemap, wireframes, and technical specifications."
               },
               {
                 step: "03",
                 title: "Design & Development",
                 description:
-                  "We create the visual design and build your website with a focus on performance and usability.",
+                  "We create the visual design and build your website with a focus on performance and usability."
               },
               {
                 step: "04",
                 title: "Launch & Support",
-                description: "We deploy your website and provide ongoing support to ensure continued success.",
-              },
+                description:
+                  "We deploy your website and provide ongoing support to ensure continued success."
+              }
             ].map((process, index) => (
-              <div key={index} className="flex flex-col items-center space-y-2 text-center">
+              <div
+                key={index}
+                className="flex flex-col items-center space-y-2 text-center"
+              >
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-black text-white">
                   <span className="text-xl font-bold">{process.step}</span>
                 </div>
@@ -224,14 +248,19 @@ export default function AboutPage() {
       <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Ready to Work Together?</h2>
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+              Ready to Work Together?
+            </h2>
             <p className="mx-auto max-w-[600px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Let's discuss how we can help bring your vision to life.
             </p>
           </div>
           <div className="mx-auto w-full max-w-sm space-y-2">
             <Link href="/contact">
-              <Button size="lg" className="w-full bg-white text-black hover:bg-gray-200">
+              <Button
+                size="lg"
+                className="w-full bg-white text-black hover:bg-gray-200"
+              >
                 Get in Touch
               </Button>
             </Link>
@@ -241,4 +270,3 @@ export default function AboutPage() {
     </div>
   )
 }
-

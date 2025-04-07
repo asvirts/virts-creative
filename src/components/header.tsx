@@ -15,26 +15,32 @@ export default function Header() {
     { name: "Portfolio", href: "/portfolio" },
     { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "/contact" }
   ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container flex h-16 items-center px-4 sm:px-6">
+      <div className="container mx-auto flex h-16 items-center px-4 sm:px-6">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <span className="text-2xl font-bold">Virts Creative</span>
         </Link>
         <nav className="hidden md:flex md:flex-1 md:items-center md:justify-between">
           <div className="flex items-center space-x-6">
             {navigation.map((item) => (
-              <Link key={item.name} href={item.href} className="text-sm font-medium transition-colors hover:text-black">
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-medium transition-colors hover:text-black"
+              >
                 {item.name}
               </Link>
             ))}
           </div>
           <div>
             <Link href="/contact">
-              <Button className="bg-black text-white hover:bg-gray-800">Get in Touch</Button>
+              <Button className="bg-black text-white hover:bg-gray-800">
+                Get in Touch
+              </Button>
             </Link>
           </div>
         </nav>
@@ -47,7 +53,11 @@ export default function Header() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <nav className="flex flex-col gap-6">
-              <Link href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/"
+                className="flex items-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 <span className="text-xl font-bold">Virts Creative</span>
               </Link>
               <div className="flex flex-col space-y-3">
@@ -63,7 +73,9 @@ export default function Header() {
                 ))}
               </div>
               <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                <Button className="w-full bg-black text-white hover:bg-gray-800">Get in Touch</Button>
+                <Button className="w-full bg-black text-white hover:bg-gray-800">
+                  Get in Touch
+                </Button>
               </Link>
             </nav>
           </SheetContent>
@@ -72,4 +84,3 @@ export default function Header() {
     </header>
   )
 }
-

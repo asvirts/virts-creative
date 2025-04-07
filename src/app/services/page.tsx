@@ -105,7 +105,7 @@ export default function ServicesPage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-100">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -122,7 +122,7 @@ export default function ServicesPage() {
 
       {/* Introduction */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-[800px] mx-auto">
             <p className="text-gray-700 text-lg mb-6">
               At Virts Creative, we don't just build websites—we craft digital
@@ -177,7 +177,7 @@ export default function ServicesPage() {
 
       {/* Services Detail */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-4">
               Services That Set Us Apart
@@ -227,7 +227,7 @@ export default function ServicesPage() {
 
       {/* Process Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -258,7 +258,7 @@ export default function ServicesPage() {
 
       {/* Why Webflow Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-[800px] mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter mb-6">
               Why Webflow Is the Superior Choice for Your Business
@@ -309,7 +309,7 @@ export default function ServicesPage() {
 
       {/* CTA Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
-        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+        <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
               Ready to Elevate Your Digital Presence?
