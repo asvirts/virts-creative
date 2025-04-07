@@ -166,9 +166,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Our Office</h3>
                     <p className="text-gray-500">
-                      123 Design Street
-                      <br />
-                      San Francisco, CA 94103
+                      Lafayette, LA 70508
                       <br />
                       United States
                     </p>
@@ -178,11 +176,7 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-gray-500" />
                   <div>
                     <h3 className="font-bold">Email Us</h3>
-                    <p className="text-gray-500">
-                      info@virtscreative.com
-                      <br />
-                      support@virtscreative.com
-                    </p>
+                    <p className="text-gray-500">andrew@virtscreative.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -190,9 +184,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Call Us</h3>
                     <p className="text-gray-500">
-                      +1 (555) 123-4567
+                      +1 (337) 362-3217
                       <br />
-                      Mon-Fri, 9am-6pm PST
+                      Mon-Fri, 8am-5pm Central Time
                     </p>
                   </div>
                 </div>
