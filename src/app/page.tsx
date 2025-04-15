@@ -384,7 +384,7 @@ export default async function Home() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-8 py-12 lg:grid-cols-2">
+          <div className="mx-auto grid w-full gap-8 py-12 lg:grid-cols-4">
             {latestPosts.length === 0 ? (
               <div className="text-center py-12">
                 <h3 className="text-xl font-medium text-gray-500">
