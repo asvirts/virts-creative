@@ -13,28 +13,10 @@ export const metadata = {
 export default function AboutPage() {
   const team = [
     {
-      name: "Alex Johnson",
+      name: "Andrew Virts",
       role: "Founder & Creative Director",
-      bio: "With over 15 years of experience in design and development, Alex founded Virts Creative with a vision to help businesses succeed online.",
-      image: "/placeholder.svg?height=400&width=400&text=Alex"
-    },
-    {
-      name: "Sarah Chen",
-      role: "Lead Designer",
-      bio: "Sarah brings a unique perspective to every project, combining artistic vision with user-centered design principles.",
-      image: "/placeholder.svg?height=400&width=400&text=Sarah"
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "Senior Developer",
-      bio: "Michael is passionate about creating clean, efficient code that brings designs to life with seamless functionality.",
-      image: "/placeholder.svg?height=400&width=400&text=Michael"
-    },
-    {
-      name: "Emily Kim",
-      role: "Project Manager",
-      bio: "Emily ensures that every project runs smoothly, keeping communication clear and deliverables on schedule.",
-      image: "/placeholder.svg?height=400&width=400&text=Emily"
+      bio: "With over 5 years of experience in design and development, Andrew founded Virts Creative with a vision to help businesses succeed online.",
+      image: "https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZmjeJPfBJFz4nbW2LMDNtOP7jpI1sgh5ScClu"
     }
   ]
 
@@ -62,16 +44,14 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter">Our Story</h2>
+              <h2 className="text-3xl font-bold tracking-tighter">The Story</h2>
               <p className="text-gray-500 md:text-xl/relaxed">
-                Founded in 2015, Virts Creative began with a simple mission: to
+                Founded in 2024, Virts Creative began with a simple mission: to
                 help businesses succeed online through thoughtful design and
                 powerful technology.
               </p>
               <p className="text-gray-500 md:text-xl/relaxed">
-                What started as a small team of passionate designers and
-                developers has grown into a full-service digital agency, serving
-                clients across industries and around the world.
+                Andrew has worked for digital marketing agencies as well as large e-commerce platforms like Stuller.
               </p>
               <p className="text-gray-500 md:text-xl/relaxed">
                 Today, we continue to be driven by our commitment to excellence,
@@ -81,7 +61,7 @@ export default function AboutPage() {
             </div>
             <div className="flex justify-center">
               <img
-                src="/placeholder.svg?height=600&width=600&text=Our+Story"
+                src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZmjeJPfBJFz4nbW2LMDNtOP7jpI1sgh5ScClu"
                 alt="Virts Creative team working together"
                 width={600}
                 height={600}
@@ -156,7 +136,7 @@ export default function AboutPage() {
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Meet Our Team
+                Meet The Team
               </h2>
               <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 The talented individuals who bring creativity and expertise to
@@ -194,7 +174,7 @@ export default function AboutPage() {
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Our Process
+                The Process
               </h2>
               <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 How we work with clients to deliver exceptional results.
