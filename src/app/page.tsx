@@ -75,10 +75,8 @@ export default async function Home() {
             <div className="flex items-center justify-center">
               <img
                 src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZ9bzI6URktQIUP3mXGsiVdoB5cHDTe0lSJYON"
-                width={550}
-                height={1550}
                 alt="Hero image showing web design process"
-                className="rounded-lg object-cover"
+                className="rounded-lg object-cover h-[400px] w-full"
               />
             </div>
           </div>
