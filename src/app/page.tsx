@@ -1,7 +1,17 @@
 import Link from "next/link"
 import { ArrowRight, CheckCircle, Code, Layout, Palette } from "lucide-react"
+import type { Entry } from "contentful"
 
 import { Button } from "@/components/ui/button"
+import {
+  getFeaturedProjects,
+  getAllPosts,
+  type PortfolioProject,
+  type BlogPost
+} from "@/lib/contentful"
+
+// Define ProjectEntry type to match PortfolioProject structure
+type ProjectEntry = PortfolioProject
 
 export const metadata = {
   title: "Virts Creative | Web Design & Development Agency",
@@ -20,7 +30,14 @@ export const metadata = {
   }
 }
 
-export default function Home() {
+export default async function Home() {
+  const allFeaturedProjects: PortfolioProject[] = await getFeaturedProjects()
+  const projects = allFeaturedProjects.slice(0, 4)
+
+  // Fetch latest blog posts
+  const allPosts: BlogPost[] = await getAllPosts()
+  const latestPosts = allPosts.slice(0, 4)
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full">
       {/* Hero Section */}
@@ -57,9 +74,9 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center">
               <img
-                src="/placeholder.svg?height=550&width=550"
+                src="https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZ9bzI6URktQIUP3mXGsiVdoB5cHDTe0lSJYON"
                 width={550}
-                height={550}
+                height={1550}
                 alt="Hero image showing web design process"
                 className="rounded-lg object-cover"
               />
@@ -133,7 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Featured Projects - Updated Section */}
       <section
         className="w-full py-12 md:py-24 lg:py-32 bg-gray-50"
         id="portfolio"
@@ -151,15 +168,21 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl gap-8 py-12 lg:grid-cols-2">
-            {[1, 2, 3, 4].map((item) => (
+            {projects.map((project) => (
               <div
-                key={item}
+                key={project.sys.id}
                 className="group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl"
               >
-                <Link href={`/portfolio/project-${item}`}>
+                <Link href={`/portfolio/${project.fields.slug}`}>
                   <img
-                    src={`/placeholder.svg?height=400&width=600&text=Project+${item}`}
-                    alt={`Project ${item} thumbnail`}
+                    src={
+                      project.fields.featuredImage?.fields?.file?.url ||
+                      "/placeholder.svg"
+                    }
+                    alt={
+                      project.fields.featuredImage?.fields?.title ||
+                      project.fields.title
+                    }
                     width={600}
                     height={400}
                     className="h-[300px] w-full object-cover transition-all group-hover:scale-105"
@@ -168,8 +191,12 @@ export default function Home() {
                     <span className="text-white font-medium">View Project</span>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-xl font-bold">Project {item}</h3>
-                    <p className="text-gray-500">Web Design & Development</p>
+                    <h3 className="text-xl font-bold">
+                      {project.fields.title}
+                    </h3>
+                    <p className="text-gray-500">
+                      {project.fields.description || "Web Design & Development"}
+                    </p>
                   </div>
                 </Link>
               </div>
@@ -199,19 +226,25 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+          <div className="mx-auto grid w-full gap-6 py-12 lg:grid-cols-3 lg:gap-12">
             {[
               {
-                name: "Sarah Johnson",
-                company: "Tech Innovations",
+                name: "Brad Coleman",
+                company: "Toyotech of Acadiana",
                 quote:
-                  "Working with Virts Creative transformed our online presence. Their team understood our vision and delivered a website that exceeded our expectations."
+                  "Andrew did a fantastic job building our website! With the little bit of info he had to work with, he created a perfect space for our customers to find us, contact and interact us. He also accomplished it in a very short time frame which helped us a lot. Thank you, and much appreciated!"
               },
               {
-                name: "Michael Chen",
-                company: "Eco Solutions",
+                name: "Meghan Streets",
+                company: "Covenant Child Development Center",
                 quote:
-                  "The team at Virts Creative is exceptional. They created a beautiful, functional website that perfectly represents our brand and has significantly increased our conversions."
+                  "Andrew was knowledgeable and professional. He created a logo for our preschool and built a website that has elevated our business. His technical skills are topnotch. He was available for any issues or questions that arose during our time with him. I would highly recommend Andrew and will continue to call on him for future projects."
+              },
+              {
+                name: "Alex Young",
+                company: "Adetrio",
+                quote:
+                  "Andrew took what was a very high level brief and some hastily generated content and used his excellent design and communication skills to create a beautiful and very effective one page website for my freelancing activities. I can't recommend Andrew highly enough for this and I am very pleased with the results."
               }
             ].map((testimonial, index) => (
               <div
@@ -337,8 +370,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Blog Posts */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+      {/* Latest Insights Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-white" id="blog">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -346,44 +379,62 @@ export default function Home() {
                 Latest Insights
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Stay updated with our latest thoughts on design, development,
-                and digital trends.
+                Explore our recent blog posts for tips, trends, and industry
+                insights.
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((item) => (
-              <Link key={item} href={`/blog/post-${item}`} className="group">
-                <div className="space-y-3">
-                  <img
-                    src={`/placeholder.svg?height=200&width=400&text=Blog+${item}`}
-                    alt={`Blog post ${item} thumbnail`}
-                    width={400}
-                    height={200}
-                    className="rounded-lg object-cover w-full aspect-video"
-                  />
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold group-hover:underline">
-                      The Future of Web Design in 202{item}
-                    </h3>
-                    <p className="text-gray-500">
-                      Exploring the latest trends and technologies shaping the
-                      web design landscape.
-                    </p>
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <span>June {item}, 2023</span>
-                      <span>•</span>
-                      <span>5 min read</span>
-                    </div>
+          <div className="mx-auto grid max-w-5xl gap-8 py-12 lg:grid-cols-2">
+            {latestPosts.length === 0 ? (
+              <div className="text-center py-12">
+                <h3 className="text-xl font-medium text-gray-500">
+                  No blog posts found. Check back soon!
+                </h3>
+              </div>
+            ) : (
+              latestPosts.map((post) => (
+                <Link
+                  key={post.sys.id}
+                  href={`/blog/${post.fields.slug}`}
+                  className="group"
+                >
+                  <div className="overflow-hidden rounded-lg">
+                    <img
+                      src={
+                        post.fields.featuredImage?.fields?.file?.url
+                          ? `https:${post.fields.featuredImage.fields.file.url}`
+                          : "/placeholder.svg"
+                      }
+                      alt={
+                        post.fields.featuredImage?.fields?.title ||
+                        post.fields.title
+                      }
+                      width={600}
+                      height={400}
+                      className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
-                </div>
-              </Link>
-            ))}
+                  <div className="mt-4 space-y-2">
+                    <div className="text-sm font-medium text-gray-500">
+                      {post.fields.category} •{" "}
+                      {new Date(post.fields.publishDate).toLocaleDateString(
+                        "en-US",
+                        { year: "numeric", month: "long", day: "numeric" }
+                      )}
+                    </div>
+                    <h3 className="text-xl font-bold group-hover:underline">
+                      {post.fields.title}
+                    </h3>
+                    <p className="text-gray-500">{post.fields.excerpt}</p>
+                  </div>
+                </Link>
+              ))
+            )}
           </div>
           <div className="flex justify-center">
             <Link href="/blog">
               <Button variant="outline" size="lg">
-                View All Articles
+                View All Insights
               </Button>
             </Link>
           </div>

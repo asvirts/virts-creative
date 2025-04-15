@@ -148,7 +148,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </section>
 
         {/* Article Content */}
-        <article className="container mx-auto max-w-3xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+        <article className="container mx-auto w-full px-4 md:px-6 py-12 md:py-16 lg:py-20">
           <div className="prose lg:prose-lg prose-headings:font-bold prose-h2:text-2xl prose-h3:text-xl prose-img:rounded-lg prose-img:mx-auto max-w-none">
             <ReactMarkdown>{fields.content}</ReactMarkdown>
           </div>

@@ -1,15 +1,36 @@
+import "dotenv/config"
 import { createClient } from "contentful"
 
 // Initialize Contentful client
+const spaceId = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID
+const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+const previewToken = process.env.NEXT_PUBLIC_CONTENTFUL_PREVIEW_TOKEN
+
+if (!spaceId || !accessToken) {
+  throw new Error(
+    "Contentful Space ID and Access Token must be defined in environment variables"
+  )
+}
+
+// Check if we're on the server side
+const isServer = typeof window === "undefined"
+
+if (!isServer) {
+  console.warn(
+    "Warning: Contentful client is being used on the client side. Make sure to only use it in Server Components or API routes."
+  )
+}
+
+// Create the Contentful client
 export const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || "",
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || ""
+  space: spaceId,
+  accessToken: accessToken
 })
 
 // Initialize preview client (for draft content)
 export const previewClient = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || "",
-  accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN || "",
+  space: spaceId,
+  accessToken: previewToken || "",
   host: "preview.contentful.com"
 })
 

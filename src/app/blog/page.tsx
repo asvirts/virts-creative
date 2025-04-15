@@ -1,8 +1,8 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { getAllPosts, getAllCategories, BlogPost } from "@/lib/contentful"
 import { Metadata } from "next"
 import { draftMode } from "next/headers"
+import { getAllPosts, getAllCategories, BlogPost } from "@/lib/contentful"
+import BlogContent from "@/components/blog-content"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Blog | Web Design & Development Insights",
@@ -30,11 +30,11 @@ export default async function BlogPage() {
   const { isEnabled: isPreviewMode } = await draftMode()
 
   // Fetch posts and categories from Contentful
-  const posts = await getAllPosts(isPreviewMode)
+  const initialPosts = await getAllPosts(isPreviewMode)
   const categories = await getAllCategories(isPreviewMode)
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="container mx-auto flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-100">
         <div className="container px-4 md:px-6">
@@ -52,86 +52,12 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      {/* Blog Categories */}
-      <section className="w-full py-6 md:py-10 bg-white border-b">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
-            {categories.map((category, index) => (
-              <Button
-                key={index}
-                variant={index === 0 ? "default" : "outline"}
-                className="rounded-full"
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Posts */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
-              <Link
-                key={post.sys.id}
-                href={`/blog/${post.fields.slug}`}
-                className="group"
-              >
-                <div className="space-y-4">
-                  <div className="overflow-hidden rounded-lg">
-                    <img
-                      src={
-                        post.fields.featuredImage?.fields.file.url
-                          ? `https:${post.fields.featuredImage.fields.file.url}`
-                          : "/placeholder.svg"
-                      }
-                      alt={
-                        post.fields.featuredImage?.fields.title ||
-                        post.fields.title
-                      }
-                      className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-black">
-                        {post.fields.category}
-                      </span>
-                      <span className="text-sm text-gray-500">•</span>
-                      <span className="text-sm text-gray-500">
-                        {new Date(post.fields.publishDate).toLocaleDateString(
-                          "en-US",
-                          {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric"
-                          }
-                        )}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold group-hover:underline">
-                      {post.fields.title}
-                    </h3>
-                    <p className="text-gray-500">{post.fields.excerpt}</p>
-                    <div className="flex items-center gap-2 pt-2">
-                      <span className="text-sm text-gray-500">
-                        {post.fields.readTime}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-12 flex justify-center">
-            <Button variant="outline" size="lg">
-              Load More Articles
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Blog Content with Category Filter and Posts */}
+      <BlogContent
+        initialPosts={initialPosts}
+        categories={categories}
+        isPreviewMode={isPreviewMode}
+      />
 
       {/* Newsletter */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">

@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-4">
           <Link
-            href="https://twitter.com"
+            href="https://x.com/asvirts"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
@@ -40,7 +40,7 @@ export default function Footer() {
             <Twitter className="h-5 w-5 text-gray-500 hover:text-black" />
           </Link>
           <Link
-            href="https://facebook.com"
+            href="https://www.facebook.com/virtsdev"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -48,7 +48,7 @@ export default function Footer() {
             <Facebook className="h-5 w-5 text-gray-500 hover:text-black" />
           </Link>
           <Link
-            href="https://instagram.com"
+            href="https://instagram.com/asvirts"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -56,7 +56,7 @@ export default function Footer() {
             <Instagram className="h-5 w-5 text-gray-500 hover:text-black" />
           </Link>
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/andrewvirts/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
