@@ -41,7 +41,7 @@ export default function ContactPage() {
     setError(null)
 
     try {
-      const response = await fetch("https://hooks.zapier.com/hooks/catch/123456/abcdef/", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -49,19 +49,19 @@ export default function ContactPage() {
         body: JSON.stringify(formData)
       })
 
-      const data = await response.json()
-
+      const data = await response.json();
+      
       if (response.ok) {
-        setIsSubmitted(true)
+        setIsSubmitted(true);
         setFormData({
           name: "",
           email: "",
           phone: "",
           company: "",
           message: ""
-        })
+        });
       } else {
-        setError(data.message || "Something went wrong. Please try again.")
+        setError(data.message || "Something went wrong. Please try again.");
       }
     } catch (err) {
       setError("Failed to submit the form. Please try again later.")
