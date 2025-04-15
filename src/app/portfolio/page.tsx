@@ -97,31 +97,25 @@ export default async function PortfolioPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+          <div className="mx-auto grid w-full gap-6 py-12 lg:grid-cols-3 lg:gap-12">
             {[
               {
-                name: "Sarah Johnson",
-                company: "Eco Solutions",
+                name: "Brad Coleman",
+                company: "Toyotech of Acadiana",
                 quote:
-                  "Working with Virts Creative transformed our online presence. Their team understood our vision and delivered a website that exceeded our expectations."
+                  "Andrew did a fantastic job building our website! With the little bit of info he had to work with, he created a perfect space for our customers to find us, contact and interact us. He also accomplished it in a very short time frame which helped us a lot. Thank you, and much appreciated!"
               },
               {
-                name: "Michael Chen",
-                company: "TechStart",
+                name: "Meghan Streets",
+                company: "Covenant Child Development Center",
                 quote:
-                  "The team at Virts Creative is exceptional. They created a beautiful, functional website that perfectly represents our brand and has significantly increased our conversions."
+                  "Andrew was knowledgeable and professional. He created a logo for our preschool and built a website that has elevated our business. His technical skills are topnotch. He was available for any issues or questions that arose during our time with him. I would highly recommend Andrew and will continue to call on him for future projects."
               },
               {
-                name: "Emily Rodriguez",
-                company: "Culinary Delights",
+                name: "Alex Young",
+                company: "Adetrio",
                 quote:
-                  "Our e-commerce site has never performed better. The user experience is seamless, and our customers love how easy it is to navigate and make purchases."
-              },
-              {
-                name: "David Kim",
-                company: "Fitness First",
-                quote:
-                  "The website Virts Creative designed for us has helped us attract new members and streamline our class scheduling. It's been a game-changer for our business."
+                  "Andrew took what was a very high level brief and some hastily generated content and used his excellent design and communication skills to create a beautiful and very effective one page website for my freelancing activities. I can't recommend Andrew highly enough for this and I am very pleased with the results."
               }
             ].map((testimonial, index) => (
               <div
