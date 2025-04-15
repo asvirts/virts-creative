@@ -41,7 +41,7 @@ export default function ContactPage() {
     setError(null)
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://hooks.zapier.com/hooks/catch/123456/abcdef/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
