@@ -30,7 +30,8 @@ export default function ServicesPage() {
         "User experience (UX) optimization",
         "Conversion-focused layouts",
         "Custom animations and interactions"
-      ]
+      ],
+      image: "https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZ3PHd3EnOr3SZaBYUL5Wk1CDGeJv6E2dRcKfh"
     },
     {
       icon: <Code className="h-10 w-10" />,
@@ -43,7 +44,8 @@ export default function ServicesPage() {
         "Inventory management",
         "Payment gateway integration",
         "Order fulfillment automation"
-      ]
+      ],
+      image: "https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZ9ti0bFRktQIUP3mXGsiVdoB5cHDTe0lSJYON"
     },
     {
       icon: <Palette className="h-10 w-10" />,
@@ -56,7 +58,8 @@ export default function ServicesPage() {
         "Meta data optimization",
         "Schema markup",
         "Page speed optimization"
-      ]
+      ],
+      image: "https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZqF9gJLCuVX2Y3Pwbt9S0nfUxqayZrFLg4DOd"
     },
     {
       icon: <Smartphone className="h-10 w-10" />,
@@ -69,7 +72,8 @@ export default function ServicesPage() {
         "Security maintenance",
         "Analytics reporting",
         "Conversion optimization"
-      ]
+      ],
+      image: "https://67wvo3jvf7.ufs.sh/f/31uuUYnOr3SZq83kDUCuVX2Y3Pwbt9S0nfUxqayZrFLg4DOd"
     }
   ]
 
@@ -111,7 +115,7 @@ export default function ServicesPage() {
                 Transform Your Online Presence with Lafayette's Premier Webflow
                 Experts
               </h1>
-              <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[700px] text-gray-500 mx-auto md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Expert Webflow Development & Design Services in Lafayette, LA
               </p>
             </div>
@@ -184,7 +188,7 @@ export default function ServicesPage() {
           </div>
           <div className="grid gap-12 md:gap-16">
             {services.map((service, index) => (
-              <div key={index} className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+              <div key={index} className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
                 <div className="flex flex-col justify-center space-y-4">
                   <div className="inline-block rounded-lg bg-gray-100 p-3">
                     {service.icon}
@@ -211,11 +215,9 @@ export default function ServicesPage() {
                 </div>
                 <div className="flex items-center justify-center">
                   <img
-                    src={`/placeholder.svg?height=400&width=600&text=${service.title}`}
+                    src={service.image}
                     alt={`${service.title} service illustration`}
-                    width={600}
-                    height={400}
-                    className="rounded-lg object-cover"
+                    className="rounded-lg object-cover h-[480px] w-full"
                   />
                 </div>
               </div>
@@ -238,7 +240,7 @@ export default function ServicesPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto grid w-full gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((process, index) => (
               <div
                 key={index}
