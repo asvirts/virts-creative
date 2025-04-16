@@ -231,7 +231,7 @@ export default function ContactPage() {
               <div className="rounded-lg overflow-hidden">
                 <iframe
                   title="Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6898.83195869666!2d-92.02342452290459!3d30.16810911269826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86249d0c7845a201%3A0x40769116685e56b5!2sVirts%20Creative!5e0!3m2!1sen!2sus!4v1744830472301!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6894.83123422675!2d-92.0180163!3d30.225222299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86249c854f1be191%3A0xdcbb52d6888dba53!2s116%20E%20Congress%20St%2C%20Lafayette%2C%20LA%2070501!5e0!3m2!1sen!2sus!4v1744830616022!5m2!1sen!2sus"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
