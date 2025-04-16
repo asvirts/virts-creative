@@ -49,19 +49,19 @@ export default function ContactPage() {
         body: JSON.stringify(formData)
       })
 
-      const data = await response.json();
-      
+      const data = await response.json()
+
       if (response.ok) {
-        setIsSubmitted(true);
+        setIsSubmitted(true)
         setFormData({
           name: "",
           email: "",
           phone: "",
           company: "",
           message: ""
-        });
+        })
       } else {
-        setError(data.message || "Something went wrong. Please try again.");
+        setError(data.message || "Something went wrong. Please try again.")
       }
     } catch (err) {
       setError("Failed to submit the form. Please try again later.")
@@ -201,7 +201,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Our Office</h3>
                     <p className="text-gray-500">
-                      Lafayette, LA 70508
+                      116 E Congress St
+                      <br />
+                      Lafayette, LA 70501
                       <br />
                       United States
                     </p>
@@ -229,7 +231,7 @@ export default function ContactPage() {
               <div className="rounded-lg overflow-hidden">
                 <iframe
                   title="Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.50764017948551!3d37.75781499657369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1623252234181!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6898.83195869666!2d-92.02342452290459!3d30.16810911269826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86249d0c7845a201%3A0x40769116685e56b5!2sVirts%20Creative!5e0!3m2!1sen!2sus!4v1744830472301!5m2!1sen!2sus"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
