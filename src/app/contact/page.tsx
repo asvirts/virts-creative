@@ -221,9 +221,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Call Us</h3>
                     <p className="text-gray-500">
-                      +1 (337) 362-3217
+                      +1 (337) 205-2383
                       <br />
-                      Mon-Fri, 8am-5pm Central Time
+                      Monday - Friday
+                      <br></br>
+                      8:00am-5:00pm Central Time
                     </p>
                   </div>
                 </div>
